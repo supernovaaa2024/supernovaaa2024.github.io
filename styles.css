@@ -23,16 +23,31 @@ nav ul {
     display: flex;
     justify-content: center;
     margin: 0 0 20px 0;
+    border-bottom: 1px solid #ccc;
 }
 nav li {
-    margin: 0 10px;
+    margin: 0;
 }
 nav a {
     text-decoration: none;
     color: #333;
+    display: block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    background-color: #e0e0e0;
 }
 nav a:hover {
-    text-decoration: underline;
+    background-color: #fff;
+    border-color: #ccc;
+}
+nav a.active {
+    background-color: #fff;
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
 }
 footer {
     text-align: center;
