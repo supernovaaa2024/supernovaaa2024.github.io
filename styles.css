@@ -55,3 +55,46 @@ footer {
     color: #999;
     font-size: 0.9em;
 }
+
+/* Project Styles */
+.project {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.project h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.project-links {
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.project ul {
+    margin-top: 10px;
+}
+
+.project ul li {
+    margin: 5px 0;
+}
