@@ -4,14 +4,13 @@ This folder contains the comprehensive Floor Area Ratio (FAR) analysis for the J
 
 ## 📊 Available Files
 
-- **`index.html`** - Landing page with auto-redirect to main dashboard
-- **`jamaica_far_website.html`** - Main dashboard with statistics and embedded map
-- **`jamaica_comprehensive_far_analysis.html`** - Interactive map only
+- **`index.html`** - Landing page with auto-redirect to interactive map
+- **`jamaica_comprehensive_far_analysis.html`** - Interactive map with comprehensive FAR analysis
 
 ## 🌐 Live Website
 
 Visit: `https://supernovaaa2024.github.io/jamaica-far-analysis/`
-w
+
 ## 📈 Analysis Categories
 
 - Commercial FAR
