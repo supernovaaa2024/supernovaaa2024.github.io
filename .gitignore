@@ -1,0 +1,35 @@
+# Large files that shouldn't be in git
+*.pdf
+*.PDF
+
+# Large images  
+*.jpeg
+*.jpg
+*.png
+*.gif
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Large analysis files
+*.html.bak
+*_backup.*
