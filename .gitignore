@@ -1,35 +1,156 @@
-# Large files that shouldn't be in git
+# ═══════════════════════════════════════════════════════════════
+# ULTRA-FAST GITHUB PUSHES - COMPREHENSIVE .GITIGNORE
+# ═══════════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────────────────────────
+# SYSTEM HIDDEN FILES (macOS/Windows/Linux)
+# ─────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.fuse_hidden*
+.nfs*
+
+# ─────────────────────────────────────────────────────────────────
+# LARGE BINARY FILES (Slow Git Operations)
+# ─────────────────────────────────────────────────────────────────
 *.pdf
 *.PDF
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.dmg
+*.iso
 
-# Large images  
-*.jpeg
+# Images (compress before committing)
 *.jpg
+*.jpeg
 *.png
 *.gif
+*.bmp
+*.tiff
+*.ico
+*.svg
+*.webp
 
-# Data files
+# Audio/Video
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.wav
+*.aac
+
+# ─────────────────────────────────────────────────────────────────
+# DATA FILES (Often Large)
+# ─────────────────────────────────────────────────────────────────
 *.csv
 *.xlsx
 *.xls
+*.json
+*.xml
+*.sql
+*.db
+*.sqlite
+*.sqlite3
 
-# Temporary files
-*.tmp
-*.temp
-.DS_Store
+# Geographic data
+*.geojson
+*.kml
+*.kmz
+*.shp
+*.shx
+*.dbf
+*.prj
 
-# IDE files
+# ─────────────────────────────────────────────────────────────────
+# DEVELOPMENT/CACHE FILES
+# ─────────────────────────────────────────────────────────────────
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+.pytest_cache/
+.coverage
+.tox/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb.bak
+*.ipynb~
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─────────────────────────────────────────────────────────────────
+# IDE/EDITOR FILES
+# ─────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.atom/
+.sublime-workspace
+.sublime-project
 
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
+# ─────────────────────────────────────────────────────────────────
+# TEMPORARY/BACKUP FILES
+# ─────────────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*_backup
+*_temp
+*_old
 
-# Jupyter notebook checkpoints
-.ipynb_checkpoints/
+# Log files
+*.log
+logs/
 
-# Large analysis files
-*.html.bak
-*_backup.*
+# ─────────────────────────────────────────────────────────────────
+# PROJECT-SPECIFIC EXCLUSIONS
+# ─────────────────────────────────────────────────────────────────
+# Analysis artifacts (keep in hidden folder)
+.analysis_cache/
+.data_cache/
+.map_cache/
+
+# Generated reports (deploy only final versions)
+*_draft.*
+*_test.*
+*_experimental.*
+
+# Large HTML files (>500KB)
+*_large.html
+*_full_data.html
+
+# ═══════════════════════════════════════════════════════════════
+# END OF GITIGNORE
+# ═══════════════════════════════════════════════════════════════
