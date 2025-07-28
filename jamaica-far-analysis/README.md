@@ -32,7 +32,7 @@ Visit: `https://supernovaaa2024.github.io/jamaica-far-analysis/`
 
 - **Framework**: Python + Folium + GeoPandas
 - **Data Source**: Google My Maps (Jamaica Neighborhood Plan)
-- **Last Updated**: July 24, 2025
+- **Last Updated**: July 28, 2025
 
 ## 🚀 Deployment
 

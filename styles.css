@@ -517,3 +517,7 @@ footer {
         padding: 1rem;
     }
 }
+
+.cv-section:first-of-type {
+    text-align: center;
+}
