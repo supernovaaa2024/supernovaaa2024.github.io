@@ -11,7 +11,10 @@
     --shadow-medium: 0 6px 16px -2px rgba(34, 34, 59, 0.08);
     --shadow-large: 0 16px 32px -4px rgba(34, 34, 59, 0.10);
     --border-radius: 4px;
-    --transition: all 0.2s cubic-bezier(.4,0,.2,1);
+    /* Optimized: transition only specific properties instead of "all" */
+    --transition-transform: transform 0.2s cubic-bezier(.4,0,.2,1);
+    --transition-color: color 0.2s cubic-bezier(.4,0,.2,1), background-color 0.2s cubic-bezier(.4,0,.2,1), border-color 0.2s cubic-bezier(.4,0,.2,1);
+    --transition-shadow: box-shadow 0.2s cubic-bezier(.4,0,.2,1);
 }
 
 * {
@@ -23,7 +26,8 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, #f8f7f4 0%, #ece9e6 100%);
+    /* Optimized: Use fixed background to avoid repaints on scroll */
+    background: linear-gradient(120deg, #f8f7f4 0%, #ece9e6 100%) fixed;
     color: var(--text-primary);
     min-height: 100vh;
     letter-spacing: 0.01em;
@@ -31,15 +35,15 @@ body {
 
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 3vh auto;
     background: var(--background-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     overflow: hidden;
     min-height: 95vh;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
     border: 1px solid var(--border-color);
+    /* Optimized: Add containment for better rendering performance */
+    contain: layout style paint;
 }
 
 header {
@@ -92,7 +96,8 @@ nav a {
     border-radius: 24px;
     background: transparent;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
+    /* Optimized: Only transition specific properties */
+    transition: var(--transition-color);
     font-weight: 500;
     font-size: 1rem;
     box-shadow: none;
@@ -103,8 +108,6 @@ nav a:hover {
     background: var(--secondary-color);
     color: #fffefb;
     border-color: var(--secondary-color);
-    transform: none;
-    box-shadow: none;
 }
 
 nav a.active {
@@ -112,7 +115,6 @@ nav a.active {
     color: #fffefb;
     font-weight: 600;
     border-color: var(--primary-color);
-    box-shadow: none;
 }
 
 main {
@@ -184,12 +186,16 @@ main p {
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    /* Optimized: Separate transitions for transform and shadow */
+    transition: var(--transition-transform), var(--transition-shadow), border-color 0.2s cubic-bezier(.4,0,.2,1);
     text-align: center;
+    /* Optimized: Hint that this element will animate */
+    will-change: transform, box-shadow;
 }
 
 .focus-item:hover {
-    transform: translateY(-4px);
+    /* Optimized: Use translate3d for hardware acceleration */
+    transform: translate3d(0, -4px, 0);
     box-shadow: var(--shadow-medium);
     border-color: var(--primary-color);
 }
@@ -216,9 +222,12 @@ main p {
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    /* Optimized: Separate transitions */
+    transition: var(--transition-transform), var(--transition-shadow), border-color 0.2s cubic-bezier(.4,0,.2,1);
     position: relative;
     overflow: hidden;
+    /* Optimized: Hint that this element will animate */
+    will-change: transform, box-shadow;
 }
 
 .project::before {
@@ -232,7 +241,8 @@ main p {
 }
 
 .project:hover {
-    transform: translateY(-4px);
+    /* Optimized: Use translate3d for hardware acceleration */
+    transform: translate3d(0, -4px, 0);
     box-shadow: var(--shadow-large);
     border-color: var(--primary-color);
 }
@@ -271,14 +281,18 @@ main p {
     border-radius: 50px;
     font-weight: 500;
     font-size: 0.95rem;
-    transition: var(--transition);
+    /* Optimized: Separate transitions */
+    transition: var(--transition-transform), var(--transition-shadow);
     box-shadow: var(--shadow-light);
     border: none;
     cursor: pointer;
+    /* Optimized: Hint that this element will animate */
+    will-change: transform, box-shadow;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+    /* Optimized: Use translate3d for hardware acceleration */
+    transform: translate3d(0, -2px, 0);
     box-shadow: var(--shadow-medium);
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
@@ -338,11 +352,15 @@ main p {
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    /* Optimized: Separate transitions */
+    transition: var(--transition-transform), var(--transition-shadow), border-color 0.2s cubic-bezier(.4,0,.2,1);
+    /* Optimized: Hint that this element will animate */
+    will-change: transform, box-shadow;
 }
 
 .contact-item:hover {
-    transform: translateY(-2px);
+    /* Optimized: Use translate3d for hardware acceleration */
+    transform: translate3d(0, -2px, 0);
     box-shadow: var(--shadow-medium);
     border-color: var(--primary-color);
 }
@@ -370,11 +388,15 @@ main p {
     border-radius: var(--border-radius);
     color: white;
     box-shadow: var(--shadow-medium);
-    transition: var(--transition);
+    /* Optimized: Separate transitions */
+    transition: var(--transition-transform), var(--transition-shadow);
+    /* Optimized: Hint that this element will animate */
+    will-change: transform, box-shadow;
 }
 
 .qr-section:hover {
-    transform: translateY(-2px);
+    /* Optimized: Use translate3d for hardware acceleration */
+    transform: translate3d(0, -2px, 0);
     box-shadow: var(--shadow-large);
 }
 
@@ -394,11 +416,15 @@ main p {
     border-radius: var(--border-radius);
     margin: 1rem 0;
     box-shadow: var(--shadow-medium);
-    transition: var(--transition);
+    /* Optimized: Only transition transform */
+    transition: var(--transition-transform);
+    /* Optimized: Hint that this element will scale */
+    will-change: transform;
 }
 
 .qr-code:hover {
-    transform: scale(1.05);
+    /* Optimized: Use scale3d for hardware acceleration */
+    transform: scale3d(1.05, 1.05, 1);
 }
 
 .xiaohongshu-info {
@@ -423,7 +449,8 @@ main a {
     text-decoration: none;
     font-weight: 500;
     border-bottom: 2px solid transparent;
-    transition: var(--transition);
+    /* Optimized: Only transition color and border */
+    transition: var(--transition-color), border-bottom-color 0.2s cubic-bezier(.4,0,.2,1);
 }
 
 main a:hover {
