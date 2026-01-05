@@ -1,0 +1,10 @@
+# Backup and original files
+*_original.*
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~

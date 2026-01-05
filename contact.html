@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Owen Huang</title>
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <!-- Optimized: Preload critical CSS -->
+    <link rel="preload" href="styles.css?v=3.1" as="style">
+    <link rel="stylesheet" href="styles.css?v=3.1">
 </head>
 <body>
     <div class="container">
@@ -58,8 +60,9 @@
                 </div>
             </div>
             
+            <div class="qr-section">
                 <h3>📱 Follow My Work on Xiaohongshu</h3>
-                <img src="IMG_2107.JPG" alt="Xiaohongshu QR Code" class="qr-code">
+                <img src="IMG_2107.JPG" alt="Xiaohongshu QR Code" class="qr-code" loading="lazy" width="400" height="644">
                 <div class="xiaohongshu-info">
                     <h4>owennnh</h4>
                     <p>Xiaohongshu ID: OwennnHuang</p>
