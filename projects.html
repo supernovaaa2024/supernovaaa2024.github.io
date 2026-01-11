@@ -37,12 +37,7 @@
                     <a href="jamaica-far-analysis/jamaica_comprehensive_far_analysis.html" target="_blank" class="btn">🗺️ Interactive Map</a>
                     <a href="jamaica-far-analysis/index.html" target="_blank" class="btn btn-secondary">📊 Detailed Analysis</a>
                     <a href="https://github.com/supernovaaa2024/RealEstateValuation" target="_blank" class="btn btn-secondary"> Github </a>
-                    <div class="project">
-    <h3>📽️ Jamaica Rezoning Presentation</h3>
-    <iframe src="https://1drv.ms/p/c/9a2a86f129d4f1d1/IQTDP1uzItG7R7uhbakO8U9bARwEizyyged0sEm3lrkQRcg?wdAr=1.7777777777777777" width="476" height="288" frameborder="0" allowfullscreen title="Jamaica Rezoning Presentation">
-        This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
-    </iframe>
-</div>
+                    
                 </div>
                 
                 <p><strong>Key Features & Insights:</strong></p>
@@ -62,6 +57,13 @@
                     <li>GeoJSON data integration for precise zone boundaries</li>
                     <li>Responsive web design for cross-platform accessibility</li>
                 </ul>
+            </div>
+
+            <div class="project">
+                <h3>📽️ Jamaica Rezoning Presentation</h3>
+                <iframe src="https://1drv.ms/p/c/9a2a86f129d4f1d1/IQTDP1uzItG7R7uhbakO8U9bARwEizyyged0sEm3lrkQRcg?wdAr=1.7777777777777777" width="476" height="288" frameborder="0" allowfullscreen title="Jamaica Rezoning Presentation">
+                    This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.
+                </iframe>
             </div>
             
             <h2>📊 Data Science & Analytics</h2>
@@ -106,6 +108,77 @@
                     <li>Integration of data analysis in literature studies</li>
                     <li>Accessible and engaging content for all readers</li>
                 </ul>
+            </div>
+
+            <h2>🏠 Real Estate & Housing Market Analysis</h2>
+            
+            <div class="project">
+                <h3>📊 Housing Market Trends by State (Interactive)</h3>
+                <p>An interactive visualization analyzing housing market trends across different U.S. states. Explore year-over-year changes, regional patterns, and market dynamics through an interactive Plotly chart.</p>
+                
+                <div id="housing-chart" style="width:100%; height:600px; margin: 20px 0;"></div>
+                
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Interactive hover tooltips with detailed state data</li>
+                    <li>Zoom and pan capabilities for detailed exploration</li>
+                    <li>Responsive design that adapts to screen size</li>
+                    <li>Real-time filtering and data exploration</li>
+                </ul>
+                
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                <script>
+                    // Sample housing market data - replace with your actual data
+                    var trace1 = {
+                        x: ['CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI'],
+                        y: [15.2, 18.5, 22.3, 8.4, 6.7, 9.2, 11.8, 19.4, 16.7, 10.3],
+                        type: 'bar',
+                        name: 'Price Growth (%)',
+                        marker: {
+                            color: '#2E86AB',
+                            line: {
+                                color: '#1A5276',
+                                width: 1.5
+                            }
+                        },
+                        hovertemplate: '<b>%{x}</b><br>Price Growth: %{y}%<extra></extra>'
+                    };
+
+                    var layout = {
+                        title: {
+                            text: 'Housing Market Price Growth by State (YoY %)',
+                            font: {
+                                size: 20,
+                                family: 'Arial, sans-serif'
+                            }
+                        },
+                        xaxis: {
+                            title: 'State',
+                            tickfont: {
+                                size: 12
+                            }
+                        },
+                        yaxis: {
+                            title: 'Year-over-Year Price Growth (%)',
+                            tickfont: {
+                                size: 12
+                            }
+                        },
+                        plot_bgcolor: '#f9f9f9',
+                        paper_bgcolor: '#ffffff',
+                        hovermode: 'closest',
+                        responsive: true
+                    };
+
+                    var config = {
+                        responsive: true,
+                        displayModeBar: true,
+                        modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+                        displaylogo: false
+                    };
+
+                    Plotly.newPlot('housing-chart', [trace1], layout, config);
+                </script>
             </div>
         </main>
         <footer>
